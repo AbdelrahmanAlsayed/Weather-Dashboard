@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherito</title>
+    <meta name="title" content="Weather Live - Weatherito ">
+    <meta name="description" content="Weather Live is A web app that provides users with
+    real-time weather data and forecasts for any location in the world especially Egypt">
+    <link rel="icon" type="image/x-icon" href="images/Website_logo.png">
+    <!-- Font Awesome Library  -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header" id="header">
+            <a href="#" class="logo">
+                <img src="/images/logo.png" alt="logo" class="image">
+                <h1 class="heading">Weatherito</h1>
+            </a>
+            <div class="search-view" >
+                <div class="search-wrapper">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="search" name="search" class="search-field" placeholder="Search city..."
+                    autocomplete="off" data-search-field>
+                    <button class="icon-btn closeS" aria-label="close search">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div class="search-result" data-search-result>
+                    <ul class="view-list" data-search-list>
+                    </ul>
+                </div>
+            </div>
+            <div class="end">
+                <div class="header-actions">
+                    <button class="icon-btn openS" aria-label="open search" title="open search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <a href="#" data-current-location-btn title="current location weather">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <span class="span location-button">Current Location</span>
+                    </a>
+                </div>
+                <div class="switch">
+                    <button class="toggle" aria-label="switch between light and dark mode"
+                    title="switch the theme">
+                        <i class="fa-solid fa-moon theIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="content-left">
+                <section class="current-weather" aria-label="current weather">
+                    <div class="card">
+                        <h2 class="title">Now</h2>
+                        <div class="wrapper">
+                            <span class="heading degree-now">17°c</span>
+                            <img src=" https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon"
+                            class="weather-icon" loading="lazy">
+                        </div>
+                        <p class="wState">Broken Clouds</p>
+                        <ul class="meta-list">
+                            <li class="meta-item">
+                                <i class="fa-solid fa-calendar-week meta-icon"></i>
+                                <p class="meta-text theDate">Sunday, May 28</p>
+                            </li>
+                            <li class="meta-item">
+                                <i class="fa-solid fa-location-dot meta-icon"></i>
+                                <p class="meta-text cityAndCountry">Cairo, EG</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="forecast" aria-label="forecast label">
+                    <h2> 5 Days Forecast: </h2>
+                    <div class="card-wrapper">
+                    </div>
+                </section>
+            </div>
+            <div class="content-right">
+                <section class="highlights" aria-label="highlights label">
+                    <h2 class="t-h" id="highlights-label">Today Highlights</h2>
+                    <div class="Highlight-list">
+                        <div class="first-row flex">
+                            <div class="row-one air box">
+                                <div class="top flex">
+                                    <h3 class="h3">Air Quality Index</h3>
+                                    <span class="badge" title="aqi message">Good</span>
+                                </div>
+                                <div class="bottom flex">
+                                    <i class="fa-solid fa-wind"></i>
+                                    <ul class="card-list flex theAirPollution">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row-two sunriseAndSunset box">
+                                <div class="top">
+                                    <h3 class="h3">Sunrise & Sunset</h3>
+                                </div>
+                                <div class="bottom">
+                                    <ul class="card-list flex sunriseSunset">
+                                        <li class="card-item flex">
+                                            <i class="fa-regular fa-sun"></i>
+                                            <div class="wrapper">
+                                                <p class="label">Sunrise</p>
+                                                <p class="title sunriseTime">6:38 AM</p>
+                                            </div>
+                                        </li>
+                                        <li class="card-item flex">
+                                            <i class="fa-regular fa-moon"></i>
+                                            <div class="wrapper">
+                                                <p class="label">Sunset</p>
+                                                <p class="title sunsetTime">5:54 PM</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-row flex">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="hourly-forecast" aria-label="hourly forecast"
+                data-hourly-forecast>
+                    <h2>Today at</h2>
+                    <div class="slider-container">
+                        <ul class="slider-list" data-temp>
+                        </ul>
+                        <ul class="slider-list" data-wind>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="openWeather">
+                <p>Powered by </p>
+                <a href="https://openweathermap.org/api" title="Free OpenWeather Api" target="_blank">
+                    <img src="images/openweather.png" alt="openWeather" loading="lazy">
+                </a>
+            </div>
+
+            <p><sup>&#169; </sup>2023  <span class="myName">Abdelrahman Alsayed</span></p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/abdelrahman-alsayed-b312311a0/" title="Author LinkedIn account"
+                target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/AbdelrahmanAlsayed" title="Author github account" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+<!--  Abdelrahman Alsayed  -->
